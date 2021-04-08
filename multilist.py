@@ -3,7 +3,8 @@ def multiply_list(value_list):
     if len(value_list) == 0:
         total = 0
     for i in value_list:
-        total = total * i
+        if isinstance(i, int):
+            total = total * i
     return total
 
-#buildattempt with codecov 2
+# build attempt with codecov 3 to check graph and changes

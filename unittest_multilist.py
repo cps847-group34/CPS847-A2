@@ -19,6 +19,12 @@ class TestMultiplicationOperation(unittest.TestCase):
     def test_multiple2(self):
         self.assertEqual(multi.multiply_list([1, 2, 3, 5, 10]), 300)
 
+    def test_letter(self):
+        self.assertEqual(multi.multiply_list(["a", 1, 2, 55, 100]), 11000)
+
+    def test_onlyLetters(self):
+        self.assertEqual(multi.multiply_list(["ab", "ac"]), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
