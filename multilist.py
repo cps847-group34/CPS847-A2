@@ -6,4 +6,3 @@ def multiply_list(value_list):
         total = total * i
     return total
 
-#test for push
