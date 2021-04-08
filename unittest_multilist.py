@@ -18,3 +18,7 @@ class TestMultiplicationOperation(unittest.TestCase):
 
     def test_multiple2(self):
         self.assertEqual(multi.multiply_list([1, 2, 3, 5, 10]), 300)
+
+
+if __name__ == '__main__':
+    unittest.main()

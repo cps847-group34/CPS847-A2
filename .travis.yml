@@ -1,4 +1,7 @@
 language: python
 python:
   - "3.8"
-script: python unittest_multilist.py
+install: "pip install coverage"
+script:
+  - coverage run unittest_multilist.py
+after_success: bash < (curl -s https://codecov.io/bash) -t CODECOV_TOKEN
