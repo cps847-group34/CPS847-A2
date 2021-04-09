@@ -6,5 +6,3 @@ def multiply_list(value_list):
         if isinstance(i, int):
             total = total * i
     return total
-
-# build attempt with codecov 3 to check graph and changes
