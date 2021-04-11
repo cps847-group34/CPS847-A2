@@ -13,11 +13,12 @@ after success:
     - docker push vicluirys/cps847a2 .
 
 #deloy:
-    #provider: elasticbeanstalk
-    #region: "us-east-1"
-    #app: "Docker-env"
-    #bucket_name: "elasticbeanstalk-us-east-1-25806489703"
-    #on: 
-        #branch: master
-    #access_key_id: $AWS_ACCESS_KEY
-    #secret_access_key: $AWS_SECRET_KEY
+    provider: elasticbeanstalk
+    region: "us-east-1"
+    app: "Assign2test" #name of application on AWS
+    env: "Assign2test-env"
+    bucket_name: "elasticbeanstalk-us-east-2-527970132923"
+    on: 
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
