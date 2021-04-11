@@ -1,8 +1,23 @@
+sudo: required
 language: python
-python:
-  - "3.8"
-install: "pip install coverage"
+services:
+- docker
+
 script:
-  - coverage run unittest_multilist.py
-after_success: bash <(curl -s https://codecov.io/bash)
-#testing
+- docker image build -t ${DOCKER_ID}/cps847a2 .
+
+after success:
+    #log into docker CLI
+    - echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_ID} --password-stdin
+    #take bult iamges and push to Docker Hub
+    - docker push vicluirys/cps847a2 .
+
+#deloy:
+    #provider: elasticbeanstalk
+    #region: "us-east-1"
+    #app: "Docker-env"
+    #bucket_name: "elasticbeanstalk-us-east-1-25806489703"
+    #on: 
+        #branch: master
+    #access_key_id: $AWS_ACCESS_KEY
+    #secret_access_key: $AWS_SECRET_KEY
