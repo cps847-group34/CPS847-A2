@@ -15,10 +15,11 @@ after success:
 #deloy:
     provider: elasticbeanstalk
     region: "us-east-1"
-    app: "Assign2test" #name of application on AWS
+    #name of application on AWS
+    app: "Assign2test" 
     env: "Assign2test-env"
     bucket_name: "elasticbeanstalk-us-east-2-527970132923"
     on: 
         branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: ${AWS_ACCESS_KEY}
+    secret_access_key: ${AWS_SECRET_KEY}
