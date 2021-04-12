@@ -1,0 +1,22 @@
+sudo: required
+language: python
+services:
+  - docker
+script:
+  - docker image build - #add the docker
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push macolette/demo1
+
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  region: "us-east-1"
+  app: "deploy"
+  env: "Deploy-env"
+  bucket_name: "elasticbeanstalk-us-east-2-023553449770"
+  on:
+    branch: master
