@@ -1,0 +1,28 @@
+sudo: required
+language: python
+services:
+- docker
+
+script:
+- docker image build -t vicluirys/assignment2 .
+
+after_success:
+    #log into docker CLI
+    - echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_ID} --password-stdin
+    #take bult iamges and push to Docker Hub
+    - docker push vicluirys/assignment2 
+
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    #name of application on AWS
+    app: "assign2test" 
+    #env: "Assign2test-env"
+    bucket: "elasticbeanstalk-us-east-2-294291850041"
+    on: 
+        #branch: master
+        repo:  cps847-group34/CPS847-A2
+        tags: true
+        all_branches: true
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
