@@ -6,19 +6,19 @@ services:
 script:
 - docker image build -t ${DOCKER_ID}/cps847a2 .
 
-after success:
+after_success:
     #log into docker CLI
     - echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_ID} --password-stdin
     #take bult iamges and push to Docker Hub
     - docker push vicluirys/cps847a2 .
 
-deloy:
+deploy:
     provider: elasticbeanstalk
     region: "us-east-1"
     #name of application on AWS
     app: "Assign2test" 
     env: "Assign2test-env"
-    bucket_name: "elasticbeanstalk-us-east-2-527970132923"
+    bucket: "elasticbeanstalk-us-east-2-527970132923"
     on: 
         branch: master
     access_key_id: $AWS_ACCESS_KEY
