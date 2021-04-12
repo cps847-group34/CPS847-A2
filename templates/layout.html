@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOFTWARE TOOLS ASSIGN 2</title>
+    
+</head>
+<body>
+
+
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

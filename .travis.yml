@@ -18,7 +18,7 @@ deploy:
     #name of application on AWS
     app: "assign2test" 
     #env: "Assign2test-env"
-    bucket: "elasticbeanstalk-us-east-2-527970132923"
+    bucket: $bucketnumber
     on: 
         #branch: master
         repo:  cps847-group34/CPS847-A2
