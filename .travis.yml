@@ -10,7 +10,7 @@ after_success:
     #log into docker CLI
     - echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_ID} --password-stdin
     #take bult iamges and push to Docker Hub
-    - docker push vicluirys/cps847a2 .
+    - docker push ${DOCKER_ID}/cps847a2 
 
 deploy:
     provider: elasticbeanstalk
