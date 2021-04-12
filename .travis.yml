@@ -14,7 +14,7 @@ after_success:
 
 deploy:
     provider: elasticbeanstalk
-    region: "us-east-1"
+    region: $region
     #name of application on AWS
     app: "assign2test" 
     #env: "Assign2test-env"
