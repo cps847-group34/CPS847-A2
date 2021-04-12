@@ -21,8 +21,7 @@ deploy:
     bucket: "elasticbeanstalk-us-east-2-527970132923"
     on: 
         repo:  cps847-group34/CPS847-A2
-        branches:
-            only:
-                - master
+        tags: true
+        all_branches: true
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
