@@ -14,12 +14,13 @@ after_success:
 
 deploy:
     provider: elasticbeanstalk
-    region: $region
+    region: "us-east-1"
     #name of application on AWS
-    app: "Assign2test" 
-    env: "Assign2test-env"
-    bucket: $bucketnumber
+    app: "assign2test" 
+    #env: "Assign2test-env"
+    bucket: "elasticbeanstalk-us-east-2-527970132923"
     on: 
+        #branch: master
         repo:  cps847-group34/CPS847-A2
         tags: true
         all_branches: true
