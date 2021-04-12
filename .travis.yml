@@ -4,7 +4,7 @@ services:
 - docker
 
 script:
-- docker image build -t ${DOCKER_ID}/testing1 .
+- docker image build -t ${DOCKER_ID}/assignment2 .
 
 after_success:
     #log into docker CLI
