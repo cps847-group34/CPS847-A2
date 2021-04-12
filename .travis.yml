@@ -4,13 +4,13 @@ services:
 - docker
 
 script:
-- docker image build -t ${DOCKER_ID}/assignment2 .
+- docker image build -t vicluirys/assignment2 .
 
 after_success:
     #log into docker CLI
     - echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_ID} --password-stdin
     #take bult iamges and push to Docker Hub
-    - docker push ${DOCKER_ID}/assignment2 
+    - docker push vicluirys/assignment2 
 
 deploy:
     provider: elasticbeanstalk
