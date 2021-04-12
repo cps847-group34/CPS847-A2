@@ -20,10 +20,16 @@ deploy:
     env: "Assign2test-env"
     bucket: "elasticbeanstalk-us-east-2-527970132923"
     on: 
+<<<<<<< HEAD
         #repo:  cps847-group34/CPS847-A2
         #tags: true
         #all_branches: true
         only:
             master
+=======
+        repo:  cps847-group34/CPS847-A2
+        tags: true
+        all_branches: true
+>>>>>>> c93abac5a31b15b4bb10c65007a52d206c280a99
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
