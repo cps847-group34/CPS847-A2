@@ -4,13 +4,13 @@ services:
 - docker
 
 script:
-- docker image build -t ${DOCKER_ID}/cps847a2
+- docker image build -t ${DOCKER_ID}/testing1 .
 
 after_success:
     #log into docker CLI
     - echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_ID} --password-stdin
     #take bult iamges and push to Docker Hub
-    - docker push ${DOCKER_ID}/cps847a2 
+    - docker push ${DOCKER_ID}/assignment2 
 
 deploy:
     provider: elasticbeanstalk
@@ -21,6 +21,7 @@ deploy:
     bucket: "elasticbeanstalk-us-east-2-527970132923"
     on: 
         repo:  cps847-group34/CPS847-A2
-        all_branches: true
+        branch: 
+            - master
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
