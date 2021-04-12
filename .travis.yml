@@ -9,9 +9,9 @@ after_success: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: elasticbeanstalk
   access_key_id:
-    secure: "Ecrypted <access-key-id>=AKIAQK67FD4VBEVWEIOF"
+    secure: "Ecrypted <access-key-id>="
   secret_access_key:
-    secure: "Encrypted <secret-access-key>=mGQ8rqSIwpW0NO/MCXL6GGW6iu7IIx9735setz6p"
+    secure: "Encrypted <secret-access-key>="
   region: "us-east-1"
   app: " "
   env: " "
